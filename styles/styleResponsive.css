@@ -1,0 +1,167 @@
+@media (max-width: 900px) {
+	/* Cards menores ainda mais compactos */
+	.portfolio-card {
+		width: 84vw !important;
+		max-width: 290px !important;
+		font-size: 0.91em !important;
+		padding: 8px 4px !important;
+		border-radius: 14px !important;
+	}
+	.portfolio-cards {
+		gap: 10px !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	/* Menu mobile: bolinha centralizada, nome/subtítulo abaixo, menu abaixo em linha */
+	.modern-header, .modern-nav {
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		padding: 18px 0 10px 0 !important;
+	}
+	.menu-center {
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		gap: 0 !important;
+		margin: 0 !important;
+		min-width: 0 !important;
+		width: 100% !important;
+	}
+	.logo-circle {
+		margin-left: auto !important;
+		margin-right: 20px !important;
+		margin-bottom: -4px !important;
+		margin-top: 0 !important;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		width: 54px !important;
+		height: 54px !important;
+		font-size: 2em !important;
+		position: static !important;
+	}
+	.logo-text {
+		margin: 0 auto 0 auto !important;
+		text-align: center !important;
+		font-size: 1.1em !important;
+		font-weight: 700 !important;
+		letter-spacing: 0.5px !important;
+		display: block !important;
+	}
+	.subtitle {
+		margin: 0 auto 24px auto !important;
+		text-align: center !important;
+		font-size: 1em !important;
+		color: #00baff !important;
+		display: block !important;
+        margin-right: 5px !important;
+	}
+	.menu-right {
+		width: 100% !important;
+		margin: 0 !important;
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
+	.modern-menu {
+		flex-direction: row !important;
+		justify-content: center !important;
+		align-items: center !important;
+		gap: 18px !important;
+		width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		font-size: 1em !important;
+	}
+	.modern-menu li {
+		margin: 20px !important;
+	}
+	.menu-link {
+		font-size: 1em !important;
+		padding: 8px 10px !important;
+		text-align: center !important;
+		display: inline-block !important;
+	}
+}
+
+
+
+/* ======= AJUSTES MOBILE/TABLET: NÃO OCUPAR 100% E MAIS ESPAÇOS ======= */
+@media (max-width: 900px) {
+	/* Cards menores NÃO ocupam 100%: deixam espaço lateral */
+	.portfolio-cards {
+		padding-left: 4vw !important;
+		padding-right: 4vw !important;
+		box-sizing: border-box !important;
+	}
+	.portfolio-card {
+		width: 70vw !important;
+		max-width: 250px !important;
+		min-width: 0 !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		box-sizing: border-box !important;
+	}
+
+	/* Espaço extra no menu/header */
+	.modern-header, .modern-nav {
+		padding-top: 18px !important;
+		padding-bottom: 18px !important;
+	}
+	.menu-center {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		min-width: 0 !important;
+		gap: 10px !important;
+		justify-content: flex-start !important;
+	}
+	.logo-circle {
+		margin-left: 8px !important;
+	}
+	.logo-text, .subtitle {
+		margin-left: 0 !important;
+		margin-top: 6px !important;
+		text-align: left !important;
+		display: block !important;
+	}
+	.logo-text {
+		margin-bottom: 2px !important;
+	}
+	.subtitle {
+		margin-bottom: 8px !important;
+	}
+
+	/* Menu não colado: espaço entre logo e texto */
+	.logo-area {
+		gap: 10px !important;
+	}
+
+	/* Sobre Mim: espaçamento extra e texto não colado */
+	.about-flex {
+		gap: 28px !important;
+		padding-left: 8vw !important;
+		padding-right: 8vw !important;
+		box-sizing: border-box !important;
+	}
+	.about-text-col {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	.about-desc {
+		margin-top: 10px !important;
+		margin-bottom: 22px !important;
+		line-height: 1.8 !important;
+		letter-spacing: 0.01em !important;
+		word-break: break-word !important;
+		text-align: left !important;
+		padding-right: 2vw !important;
+	}
+	.section-title {
+		margin-bottom: 16px !important;
+		text-align: left !important;
+	}
+}
+
+

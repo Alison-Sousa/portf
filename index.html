@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Conheça meu portfólio de desenvolvimento web e mobile, com projetos em HTML, CSS, JavaScript, PHP, SQL e React Native. Juntos, podemos criar algo incrível! Entre em contato e vamos começar a trabalhar.">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/styleResponsive.css" />
+  <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://kit.fontawesome.com/c35ca0d4c2.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <title>Alison Sousa</title>
+</head>
+
+<body>
+  <div class="progress"></div>
+  <main>
+    <header class="modern-header" style="width:100%;background:linear-gradient(120deg,#151d24 80%,#1b2631 100%);padding:0;">
+      <nav class="modern-nav" style="display:flex;justify-content:center;align-items:center;width:100%;padding:0;">
+        <div class="menu-center" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:18px;margin:24px 0 24px 260px;width:auto;min-width:340px;">
+          <span class="logo-circle" style="display:flex;align-items:center;justify-content:center;width:70px;height:70px;background:linear-gradient(135deg,#00baff 60%,#0077ff 100%);color:#fff;font-size:2.4em;font-weight:700;border-radius:50%;box-shadow:0 2px 16px #00baff33;">AS</span>
+          <div style="display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;margin-left:18px;position:relative;top:10px;">
+            <span class="logo-text" style="font-size:1.55em;font-weight:700;color:#fff;letter-spacing:0.5px;line-height:1.1;">Alison Sousa</span>
+            <span class="subtitle" style="font-size:1.18em;font-weight:500;color:#00baff;margin-top:2px;line-height:1.1;">Cientista de Dados</span>
+          </div>
+        </div>
+        <!-- Dynamic tech icon + name effect foi movido para a seção Sobre mim -->
+        <div class="menu-right" style="display:flex;flex-direction:row;align-items:center;margin-left:100px;gap:0;height:100%;">
+          <ul class="modern-menu" style="display:flex;flex-direction:row;gap:70px;list-style:none;margin:0;padding:0;align-items:center;font-size:1.32em;">
+            <li><a href="#about" class="menu-link">Sobre</a></li>
+            <li><a href="#portfolio" class="menu-link">Portfólio</a></li>
+            <li style="display:flex;align-items:center;gap:0;">
+              <a href="#contact" class="menu-link">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <style>
+        .modern-header { position: relative; }
+        .dynamic-tech-text {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          min-height: 32px;
+        }
+        #dynamicTechIcon, #dynamicTechName {
+          font-size: 1.08em;
+          font-weight: 700;
+          color: #fff;
+          line-height: 1.2;
+          transition: color .2s;
+        }
+        body.light-theme #dynamicTechIcon, body.light-theme #dynamicTechName {
+          color: #111 !important;
+        }
+        .modern-menu {
+          font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+        }
+        .menu-link {
+          color: #fff;
+          font-size: 1.22em;
+          font-weight: 700;
+          text-decoration: none;
+          padding: 10px 18px;
+          border-radius: 8px;
+          transition: color .2s, background .2s;
+          display: inline-block;
+          line-height: 1.2;
+          white-space: nowrap;
+        }
+        .menu-link:hover {
+          background: #00baff22;
+        }
+        .logo-text {
+          color: #fff;
+        }
+        body.light-theme .logo-text {
+          color: #111 !important;
+        }
+        .logo-circle {
+          background: linear-gradient(135deg,#00baff 60%,#0077ff 100%);
+          color: #fff;
+        }
+        body.light-theme .menu-link {
+          color: #111 !important;
+        }
+        body.light-theme .menu-link:hover {
+          background: #2222;
+        }
+        body.light-theme .theme-btn {
+          color: #111 !important;
+        }
+        body.light-theme .theme-btn:hover {
+          background: #2222;
+          box-shadow: 0 0 0 2px #1112;
+        }
+      </style>
+  <script>
+
+    // Rolling badge below avatar
+    document.addEventListener('DOMContentLoaded', function() {
+      const techs = [
+        { icon: '<i class="fa-brands fa-python" title="Python"></i>', name: 'Python' },
+        { icon: '<i class="fa-brands fa-r-project" title="R"></i>', name: 'R' },
+        { icon: '<i class="fa-solid fa-database" title="SQL"></i>', name: 'SQL' },
+        { icon: '<i class="fa-solid fa-chart-line" title="Data Science"></i>', name: 'Data Science' },
+        { icon: '<i class="fa-solid fa-table" title="Pandas"></i>', name: 'Pandas' },
+        { icon: '<i class="fa-solid fa-chart-area" title="Dash"></i>', name: 'Dash' }
+      ];
+      let techIndex = 0;
+      const rollingBadge = document.getElementById('rollingBadge');
+      function showNextTech() {
+        if (rollingBadge) {
+          rollingBadge.innerHTML = `${techs[techIndex].icon} ${techs[techIndex].name}`;
+          rollingBadge.classList.remove('fade-in');
+          void rollingBadge.offsetWidth; // reflow
+          rollingBadge.classList.add('fade-in');
+          techIndex = (techIndex + 1) % techs.length;
+        }
+      }
+      showNextTech();
+  setInterval(showNextTech, 2200);
+    });
+
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+      });
+    }
+
+    // ...removido: evento duplicado do botão Voltar ao Topo...
+  </script>
+        </div>
+      </div>
+    </header>
+
+  <!-- Sobre mim -->
+  <section id="about" class="modern-section">
+    <div class="about-flex">
+      <div class="about-img-col">
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="about-img-circle neon-ring" style="margin-bottom:24px;width:270px;height:270px;max-width:95vw;max-height:95vw;display:flex;align-items:center;justify-content:center; background:#181f25;">
+            <img src="images/rosto.png" alt="Perfil Alison Sousa" draggable="false" style="width:230px;height:230px;object-fit:cover;border-radius:50%;box-shadow:0 2px 24px #00c3ff22;" oncontextmenu="return false;" onmousedown="return false;" />
+          </div>
+          <div style="width:100%;display:flex;justify-content:center;align-items:center;">
+            <div class="about-rolling" style="margin-top:10px;min-height:42px;display:flex;align-items:center;justify-content:center;">
+              <span id="rollingBadge" class="badge"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text-col">
+  <h1 class="section-title" style="text-align:left;">
+  Sobre Mim
+</h1>
+        <p class="about-desc">
+          Olá, sou Alison Sousa, mestrando de Ciência da Computação na USP, apaixonado por tecnologia, dados e inovação. Tenho experiência em desenvolvimento, ciência de dados, automação e projetos premiados em competições nacionais. Certificações AWS, Yellow Belt e PQO B3. Busco sempre criar soluções inteligentes e impactantes.
+        </p>
+        <!-- Robô interativo (SVG drone premium) -->
+        <div class="about-robot" aria-label="Robô interativo" style="margin-top:28px;max-width:520px;width:100%;height:240px;">
+          <svg class="drone" viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Drone tech animado">
+            <defs>
+              <linearGradient id="grad-cyan-yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00c3ff"/>
+                <stop offset="100%" stop-color="#ffff1c"/>
+              </linearGradient>
+              <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00c3ff" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#00c3ff" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="body-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0f1419"/>
+                <stop offset="100%" stop-color="#16222e"/>
+              </linearGradient>
+              <clipPath id="visor-clip">
+                <rect x="88" y="64" width="84" height="28" rx="14"/>
+              </clipPath>
+            </defs>
+
+            <!-- halo -->
+            <g class="halo">
+              <ellipse cx="130" cy="100" rx="84" ry="56" fill="url(#glow-cyan)" opacity="0.35"/>
+              <ellipse cx="130" cy="100" rx="86" ry="58" fill="none" stroke="url(#grad-cyan-yellow)" stroke-width="1.8" stroke-linecap="round"/>
+            </g>
+
+            <!-- arms -->
+            <g class="arms" stroke="url(#grad-cyan-yellow)" stroke-width="4" stroke-linecap="round">
+              <path d="M44 98 Q80 76 118 88" fill="none" opacity=".7"/>
+              <path d="M216 98 Q180 76 142 88" fill="none" opacity=".7"/>
+            </g>
+
+            <!-- propellers -->
+            <g class="props" fill="none" stroke="#00c3ff" stroke-width="2" stroke-linecap="round">
+              <g class="prop p-left" transform="translate(32,96)">
+                <circle r="12" stroke="url(#grad-cyan-yellow)"/>
+                <path d="M0 -10 L0 -18"/>
+                <path d="M0 10 L0 18"/>
+                <path d="M-10 0 L-18 0"/>
+                <path d="M10 0 L18 0"/>
+              </g>
+              <g class="prop p-right" transform="translate(228,96)">
+                <circle r="12" stroke="url(#grad-cyan-yellow)"/>
+                <path d="M0 -10 L0 -18"/>
+                <path d="M0 10 L0 18"/>
+                <path d="M-10 0 L-18 0"/>
+                <path d="M10 0 L18 0"/>
+              </g>
+            </g>
+
+            <!-- body -->
+            <g class="body">
+              <rect x="80" y="52" width="100" height="76" rx="20" fill="url(#body-grad)" stroke="rgba(0,195,255,.35)" stroke-width="2"/>
+              <rect x="88" y="64" width="84" height="28" rx="14" fill="#0b1116" stroke="#00c3ff55"/>
+              <!-- visor shine -->
+              <g clip-path="url(#visor-clip)">
+                <rect class="scan" x="70" y="60" width="40" height="36" fill="url(#grad-cyan-yellow)" opacity="0.28"/>
+              </g>
+              <!-- eyes -->
+              <circle class="eye eye-l" cx="112" cy="78" r="6" fill="#00c3ff"/>
+              <circle class="eye eye-r" cx="148" cy="78" r="6" fill="#00c3ff"/>
+              <!-- chest pulse -->
+              <rect x="100" y="96" width="60" height="18" rx="9" fill="#0f2027" stroke="#00c3ff44"/>
+              <rect class="pulse" x="100" y="96" width="16" height="18" rx="9" fill="url(#grad-cyan-yellow)"/>
+            </g>
+
+            <!-- shadow -->
+            <ellipse class="shadow" cx="130" cy="142" rx="52" ry="10" fill="rgba(0,0,0,.35)"/>
+          </svg>
+          <div class="robot-speech-follow">
+            <div id="robotSpeech" class="robot-speech" aria-live="polite">Bem-vindo!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Balão de fala (estilo quadrinhos) exibido em cada carregamento (~2.5s) e some se chegar muito à direita
+      document.addEventListener('DOMContentLoaded', function() {
+        var speech = document.getElementById('robotSpeech');
+        if (!speech) return;
+        var container = speech.closest('.about-robot');
+  var maxRightPadding = 24; // margem maior para sumir antes de encostar
+
+        function hideSpeech() {
+          speech.classList.remove('show');
+        }
+
+        function watchClip() {
+          if (!container) return;
+          var r = speech.getBoundingClientRect();
+          var c = container.getBoundingClientRect();
+          if (r.right >= c.right - maxRightPadding) {
+            hideSpeech();
+          }
+        }
+
+        setTimeout(function(){ speech.classList.add('show'); }, 300);
+
+        // Vigia por ~3s para evitar corte e esconder ao encostar na borda direita
+        var watcher = setInterval(watchClip, 60);
+        setTimeout(function(){ clearInterval(watcher); }, 3000);
+
+        // Desaparecer após ~2.5s se não tiver sumido antes
+        setTimeout(hideSpeech, 2500);
+      });
+    </script>
+  </section>
+
+  <!-- Portfólio -->
+  <section id="portfolio" class="modern-portfolio">
+    <div style="display:flex;flex-direction:row;align-items:flex-start;justify-content:center;width:100%;gap:32px;">
+      <div style="display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;min-width:220px;max-width:320px;width:24vw;">
+  <h1 class="section-title">Projetos<br>em Destaque</h1>
+      </div>
+      <div class="portfolio-featured" id="portfolioFeaturedCards" style="gap:28px;justify-content:flex-start;width:auto;">
+        <div class="portfolio-featured-card" style="width:620px;min-width:340px;max-width:99vw;box-shadow:0 4px 32px #00baff22,0 1.5px 8px #00baff33;border-radius:28px;background:#181f25;">
+          <div class="portfolio-featured-gif" style="height:370px;display:flex;align-items:center;justify-content:center;background:#181f25;border-radius:28px 28px 0 0;overflow:hidden;">
+            <img src="images/itau.gif" alt="Projeto Itaú Quant" draggable="false" style="width:auto;height:100%;max-width:100%;object-fit:contain;max-height:370px;" />
+          </div>
+          <div class="portfolio-featured-info" style="padding:36px 32px 28px 32px;">
+            <h2 style="font-size:2.1em;">Itaú Quantamental</h2>
+            <p style="font-size:1.22em;">App premiado em hackathon nacional: robô quantitativo para análise de portfólios, métricas de risco-retorno, dashboards interativos e automação de relatórios. <b>Python, Dash, Data Science</b>.</p>
+            <div class="portfolio-featured-links">
+              <a href="#contact">Certificado</a>
+              <a href="https://github.com/Alison-Sousa/others/tree/main/quantamental" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-featured-card" style="width:620px;min-width:340px;max-width:99vw;box-shadow:0 4px 32px #00baff22,0 1.5px 8px #00baff33;border-radius:28px;background:#181f25;">
+          <div class="portfolio-featured-gif" style="height:370px;display:flex;align-items:center;justify-content:center;background:#181f25;border-radius:28px 28px 0 0;overflow:hidden;">
+            <img src="images/cfa.gif" alt="Projeto CFA Research" draggable="false" style="width:auto;height:100%;max-width:100%;object-fit:contain;max-height:370px;" />
+          </div>
+          <div class="portfolio-featured-info" style="padding:36px 32px 28px 32px;">
+            <h2 style="font-size:2.1em;">CFA Research Challenge</h2>
+            <p style="font-size:1.22em;">Projeto premiado internacionalmente: análise fundamentalista, simulações de Monte Carlo, dashboards interativos e visualização de dados para investidores. <b>Python, Plotly, Automação</b>.</p>
+            <div class="portfolio-featured-links">
+              <a href="#contact">Certificado</a>
+              <a href="https://github.com/Alison-Sousa/others/tree/main/finance" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Centralização dos cards menores e tecnologias em destaque -->
+    <div style="width:100%;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;margin-top:38px;margin-right:200px;">
+      <div class="portfolio-cards" style="display:flex;flex-direction:row;gap:38px;justify-content:flex-start;align-items:center;width:100%;max-width:1280px;margin-left:0;">
+        <div class="portfolio-card">
+          <i class="fa-solid fa-robot"></i>
+          <h3>Robôs & Dashboards</h3>
+          <p>Automação, análise de dados, visualização e relatórios inteligentes.</p>
+        </div>
+        <div class="portfolio-card">
+          <i class="fa-solid fa-database"></i>
+          <h3>Data Science & ML</h3>
+          <p>Modelagem, predição, clustering, dashboards e APIs modernas.</p>
+        </div>
+        <div class="portfolio-card">
+          <i class="fa-solid fa-laptop-code"></i>
+          <h3>Web & Mobile</h3>
+          <p>Sites e apps responsivos, design inovador, dark mode e animações.</p>
+        </div>
+      </div>
+      <div class="portfolio-tech" style="margin-top:32px;width:100%;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;margin-right:680px;">
+        <h3 style="text-align:center;margin-bottom:16px;margin-right:40px;">Tecnologias em destaque</h3>
+        <div class="tech-icons" style="display:flex;flex-direction:row;gap:32px;justify-content:flex-start;align-items:center;font-size:2.2em;">
+          <i class="fa-brands fa-python" title="Python"></i>
+          <i class="fa-brands fa-js" title="JavaScript"></i>
+          <i class="fa-solid fa-database" title="SQL"></i>
+          <i class="fa-brands fa-react" title="React Native"></i>
+          <i class="fa-solid fa-chart-line" title="Data Science"></i>
+          <i class="fa-solid fa-brain" title="Machine Learning"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+
+  <section id="contact">
+    <div id="contactLeft">
+      <div>
+  <h1 class="section-title" style="text-align:left;">
+  Contato
+</h1>
+        <a href="mailto:alisoncsousa97@gmail.com?subject=Message%20from%20some%20GitHub%20user&body=Hello%20Alison!"
+          target="_blank" rel="external" title="Enviar e-mail para Alison Sousa"><i class="fa-regular fa-envelope"></i> alisoncsousa97@gmail.com</a>
+        <p><i class="fa-solid fa-square-phone"></i> (11) 99641-4254</p>
+
+        <div id="socialMediaBox">
+          <a href="https://api.whatsapp.com/send?phone=5511996414254&text=Ol%C3%A1%2C%20Alison!"
+            title="Inicar conversa pelo WhatsApp com Alison" target="_blank" rel="external"
+            aria-label="Entrar em contato com Alison pelo WhatsApp"><i class="fa-brands fa-square-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/in/alisoncs/" target="_blank" rel="external"
+            aria-label="Linkedin de Alison"><i class="fa-brands fa-linkedin"></i></a>
+
+          <a href="https://github.com/Alison-Sousa" target="_blank" rel="external" aria-label="GitHub de Alison"><i
+              class="fa-brands fa-square-github"></i></a>
+        </div>
+      </div>
+      <div id="downloadBox">
+        <a href="documents/cv_alison_sousa.pdf" title="Baixar currículo de Alison" download>Baixar
+          Currículo</a>
+  <p class="contact-credit">Desenvolvido por <a href="#about">Alison Sousa</a></p>
+      </div>
+    </div>
+
+    <div id="contactRight">
+      <form>
+        <input type="hidden" name="_subject" value="Mensagem deixada no portfólio">
+        <input type="hidden" name="_captcha" value="false">
+        <div>
+          <input type="text" name="name" autocomplete="name" placeholder="Seu nome" minlength="4" maxlength="100"
+            required>
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+          <input type="email" name="email" autocomplete="email" placeholder="Seu email" maxlength="100" required>
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+          <textarea name="message" placeholder="Escreva sua mensagem" rows="6" maxlength="550" required></textarea>
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div id="scrollBtns">
+      <!-- Botão de voltar ao topo (garantir que só exista UM e esteja fora de qualquer form) -->
+      <button id="backToTop" type="button" title="Voltar ao topo" aria-label="Botão para voltar ao topo" style="z-index:9999; position:fixed; bottom:32px; right:32px; display:none;">
+      
+        
+        <i class="fa-solid fa-up-long"></i>
+      </button>
+    </div>
+    
+  </footer>
+
+  <script src="scripts/script.js"></script>
+  <script>
+    // Script direto para garantir funcionamento do botão voltar ao topo
+    document.addEventListener("DOMContentLoaded", function() {
+      var btn = document.getElementById("backToTop");
+      if (!btn) return;
+      window.addEventListener("scroll", function() {
+        if (window.scrollY > 100 || document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          btn.style.display = "flex";
+        } else {
+          btn.style.display = "none";
+        }
+      });
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        btn.style.opacity = "0.5";
+        setTimeout(function() { btn.style.opacity = "1"; }, 200);
+      });
+      btn.addEventListener("touchstart", function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        btn.style.opacity = "0.5";
+        setTimeout(function() { btn.style.opacity = "1"; }, 200);
+      });
+    });
+  </script>
+</body>
+
+</html>
